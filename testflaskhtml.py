@@ -1,8 +1,9 @@
 from flask import *
+import os
 import openai
 
 app = Flask(__name__)
-openai.api_key = "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"
+openai.api_key = os.getenv("klucz_api")
 @app.route('/')
 def index():
     return render_template('./index.html')
